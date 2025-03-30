@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incremental Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .button { padding: 10px 20px; font-size: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+<h1>Incremental Game</h1>
+<script type="module">
+    import { earnGold, buyUpgrade } from "./src"
+    window.earnGold = earnGold;
+    window.buyUpgrade = buyUpgrade;
+
+    document.getElementById('earnGoldButton').addEventListener('click', earnGold);
+    document.getElementById('buyUpgradeButton').addEventListener('click', buyUpgrade);
+</script>
+<p>Gold: <span id="gold">0</span></p>
+<button class="button" id="earnGoldButton">Click to Earn Gold</button>
+<button class="button" id="buyUpgradeButton">Buy Upgrade (Cost: <span id="upgradeCost">10</span>)</button>
+<p>Gold per Click: <span id="goldPerClick">1</span></p>
+
+</body>
+</html>
